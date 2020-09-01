@@ -38,9 +38,9 @@ jobs:
     - name: deploy
       uses: appleboy/scp-action@master
       with:
-       host: ${{ secrets.HOST }}
+       host: ${{ secrets.STAGING_SERVER }}
        username: root
-       key: ${{ secrets.CITY_MAPPER }}
+       key: ${{ secrets.PPU_PRIVATE_KEY }}
        source: "target/demo-1.0-SNAPSHOT.jar"
        target: "deployment"
     - name: ls -a via ssh
@@ -49,6 +49,6 @@ jobs:
        command: |
         cd ~/deployment/target
         nohub java -jar demo-1.0-SNAPSHOT-jar-with-dependencies.jar &
-       host: ${{ secrets.HOST }}
+       host: ${{ secrets.STAGING_SERVER }}
        user: root
-       key: ${{ secrets.CITY_MAPPER}}
+       key: ${{ secrets.PPU_PRIVATE_KEY}}
