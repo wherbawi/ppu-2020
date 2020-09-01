@@ -6,4 +6,5 @@ public class AStart {
     int kmaster;
     int dd;
     int d2;
+    int g;
 }
