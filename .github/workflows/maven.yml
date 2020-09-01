@@ -41,7 +41,7 @@ jobs:
        host: ${{ secrets.STAGING_SERVER }}
        username: root
        key: ${{ secrets.PPU_PRIVATE_KEY }}
-       source: "target/demo-1.0-SNAPSHOT.jar"
+       source: "target/demo-1.0-SNAPSHOT-jar-with-dependencies.jar"
        target: "deployment"
     - name: ls -a via ssh
       uses: fifsky/ssh-action@master
