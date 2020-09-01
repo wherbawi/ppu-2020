@@ -44,7 +44,7 @@ jobs:
        key: ${{ secrets.PPU_PRIVATE_KEY }}
        source: "target/demo-1.0-SNAPSHOT-jar-with-dependencies.jar"
        target: "deployment"
-    - name: ls -a via ssh
+    - name: run jar via ssh
       uses: fifsky/ssh-action@master
       with:
        command: |
