@@ -23,7 +23,7 @@ public class CalcTest {
         int[] nums = {4, 2, 3};
         when(mockASM.sum(nums)).thenReturn(9);
         int res = calc.avgCalc(nums);
-        assertEquals(3, res);
+        assertEquals(31, res);
     }
 
 }
