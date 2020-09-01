@@ -49,8 +49,7 @@ jobs:
       with:
        command: |
         cd ~/deployment/target
-        nohub java -jar demo-1.0-SNAPSHOT-jar-with-dependencies.jar &
-        echo "done"
+        java -jar demo-1.0-SNAPSHOT-jar-with-dependencies.jar
        host: ${{ secrets.STAGING_SERVER }}
        user: root
        key: ${{ secrets.PPU_PRIVATE_KEY}}
