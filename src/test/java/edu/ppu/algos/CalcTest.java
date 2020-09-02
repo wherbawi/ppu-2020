@@ -22,7 +22,7 @@ public class CalcTest {
         ArraySumCalc mockASM = mock(ArraySumCalc.class);
         Calc calc = new Calc(mockASM);
         int[] nums = {4, 2, 3};
-        when(mockASM.sum(nums)).thenReturn(19);
+        when(mockASM.sum(nums)).thenReturn(9);
         int res = calc.avgCalc(nums);
         assertEquals(3, res);
     }
