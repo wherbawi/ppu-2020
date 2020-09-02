@@ -18,6 +18,7 @@ public class CalcTest {
 
     @Test
     public void testAvgCalc() {
+
         ArraySumCalc mockASM = mock(ArraySumCalc.class);
         Calc calc = new Calc(mockASM);
         int[] nums = {4, 2, 3};
