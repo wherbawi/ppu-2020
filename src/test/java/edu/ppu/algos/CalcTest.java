@@ -16,6 +16,13 @@ public class CalcTest {
 
     }
 
+    @Test(expected = RuntimeException.class)
+    public void testAvgCalcEmptyArray() {
+        Calc calc = new Calc(null);
+        int rest = calc.avgCalc(new int[0]);
+
+    }
+
     @Test
     public void testAvgCalc() {
 
