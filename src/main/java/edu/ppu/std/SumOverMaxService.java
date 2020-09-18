@@ -1,5 +1,4 @@
 package edu.ppu.std;
-
 import java.util.List;
 
 public class SumOverMaxService {
