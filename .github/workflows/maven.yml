@@ -39,9 +39,9 @@ jobs:
     - name: deploy
       uses: appleboy/scp-action@master
       with:
-       host: ${{ secrets.STAGING_SERVER }}
-       username: root
-       key: ${{ secrets.PPU_PRIVATE_KEY }}
+       host: ${{ secrets.STAGING_SERVER_IP }}
+       username: ${{ STAGING_SERVER_DEPLOY_USR }}
+       key: ${{ STAGING_SERVER_KEY }}
        source: "target/demo-1.0-SNAPSHOT-jar-with-dependencies.jar"
        target: "deployment"
     - name: run jar via ssh
@@ -50,6 +50,6 @@ jobs:
        command: |
         cd ~/deployment/target
         java -jar demo-1.0-SNAPSHOT-jar-with-dependencies.jar
-       host: ${{ secrets.STAGING_SERVER }}
-       user: root
-       key: ${{ secrets.PPU_PRIVATE_KEY}}
+       host: ${{ secrets.STAGING_SERVER_IP }}
+       user: ${{ STAGING_SERVER_DEPLOY_USR }}
+       key: ${{ STAGING_SERVER_KEY }}
