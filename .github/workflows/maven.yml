@@ -42,14 +42,14 @@ jobs:
        host: ${{ secrets.STAGING_SERVER_IP }}
        username: ${{ secrets.STAGING_SERVER_DEPLOY_USR }}
        key: ${{ secrets.STAGING_SERVER_KEY }}
-       source: "target/demo-1.0-SNAPSHOT-jar-with-dependencies.jar"
+       source: "target/demo-1.0-SNAPSHOT.jar"
        target: "deployment"
     - name: run jar via ssh
       uses: fifsky/ssh-action@master
       with:
        command: |
         cd ~/deployment/target
-        java -jar demo-1.0-SNAPSHOT-jar-with-dependencies.jar
+        java -jar demo-1.0-SNAPSHOT.jar
        host: ${{ secrets.STAGING_SERVER_IP }}
        user: ${{ secrets.STAGING_SERVER_DEPLOY_USR }}
        key: ${{ secrets.STAGING_SERVER_KEY }}
