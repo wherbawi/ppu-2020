@@ -12,7 +12,7 @@ public class CalcTest {
     public void testSum() {
         Calc calc = new Calc(null);
         int rest = calc.sum(2, 3);
-        assertEquals(51, rest);
+        assertEquals(5, rest);
 
     }
 
