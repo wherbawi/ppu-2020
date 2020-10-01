@@ -36,7 +36,7 @@ jobs:
       - name: Build Docker image
         run: docker build -t wherbawi/business:latest -t wherbawi/business:${GITHUB_SHA::8} .
       - name: Publish Docker image
-        run: docker push wherbawi/nginx
+        run: docker push wherbawi/business
 
   redeploy:
     name: Redeploy webhook call
