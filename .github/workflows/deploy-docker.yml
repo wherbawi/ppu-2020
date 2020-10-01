@@ -46,7 +46,7 @@ jobs:
         uses: fifsky/ssh-action@master
         with: 
          command: |
-          docker pull wherbawi/nginx:latest
+          docker pull wherbawi/business:latest
           docker stop PPU_NGINX
           docker system prune -f
           docker run -d -p 8080:80 --name=PPU_NGINX wherbawi/business:latest
