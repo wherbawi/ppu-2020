@@ -49,7 +49,7 @@ jobs:
           docker pull wherbawi/nginx:latest
           docker stop PPU_NGINX
           docker system prune -f
-          docker run -d --name=PPU_NGINX wherbawi/nginx:latest
+          docker run -d -p 8080:80 --name=PPU_NGINX wherbawi/business:latest
          host: ${{ secrets.STAGING_SERVER_IP }}
          user: ${{ secrets.STAGING_SERVER_DEPLOY_USR }}
          key: ${{ secrets.STAGING_SERVER_KEY }}
