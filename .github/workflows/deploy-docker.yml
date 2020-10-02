@@ -19,11 +19,9 @@ jobs:
         run: mvn -B clean package
 
   docker:
-    name: Publish - Docker Hub
+    name: build image and publish
     runs-on: ubuntu-18.04
     needs: [test]
-    env:
-      REPO: ${{ secrets.DOCKER_REPO }}
     steps:
       - uses: actions/checkout@v1
       - name: Set up JDK 11
@@ -34,7 +32,7 @@ jobs:
         run: docker login -u ${{ secrets.DOCKER_HUB_USER }}
           -p ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
       - name: Build Docker image
-        run: docker build -t wherbawi/nginx:latest -t wherbawi/nginx:${GITHUB_SHA::8} .
+        run: docker build -t wherbawi/nginx:latest .
       - name: Publish Docker image
         run: docker push wherbawi/nginx
 
