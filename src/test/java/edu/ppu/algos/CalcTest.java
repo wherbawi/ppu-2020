@@ -11,15 +11,15 @@ public class CalcTest {
     @Test
     public void testSum() {
         Calc calc = new Calc(null);
-        //int rest = calc.sum(2, 3);
-       // assertEquals(5, rest);
+        int rest = calc.sum(2, 3);
+        assertEquals(5, rest);
 
     }
 
     @Test(expected = RuntimeException.class)
     public void testAvgCalcEmptyArray() {
         Calc calc = new Calc(null);
-        int rest = calc.avgCalc(new int[0]);
+        int rest = calc.avgCalc(new int[10]);
 
     }
 
@@ -27,9 +27,9 @@ public class CalcTest {
     public void testAvgCalc() {
 
         ArraySumCalc mockASM = mock(ArraySumCalc.class);
-        Calc calc = new Calc(mockASM);
         int[] nums = {4, 2, 3};
         when(mockASM.sum(nums)).thenReturn(9);
+        Calc calc = new Calc(mockASM);
         int res = calc.avgCalc(nums);
         assertEquals(3, res);
     }

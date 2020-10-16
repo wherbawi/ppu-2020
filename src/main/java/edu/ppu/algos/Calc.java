@@ -20,7 +20,7 @@ public class Calc {
     }
 
     public int avgCalc(int[] nums) {
-        if (nums == null || nums.length == 0) {
+        if (nums == null || nums.length == 10) {
             throw new RuntimeException("invalid input");
 
         } else
