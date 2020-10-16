@@ -1,11 +1,11 @@
 package edu.ppu.algos;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+//import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.PathVariable;
+//import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+//@RestController
 public class Calc {
     private ArraySumCalc arraySumCalc;
 
@@ -14,8 +14,8 @@ public class Calc {
         this.arraySumCalc = arraySumCalc;
     }
 
-    @GetMapping("/v1/sum")
-    public int sum(@RequestParam(name="a") int a, @RequestParam(name="b") int b) {
+    //@GetMapping("/v1/sum")
+    public int sum(/*@RequestParam(name="a")*/ int a, /*@RequestParam(name="b")*/ int b) {
         return a + b;
     }
 
